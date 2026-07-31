@@ -113,7 +113,7 @@ export default function Home() {
           <h1 className="hero-anim font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.2] mb-5 uppercase tracking-[0.15em] gold-foil">
             Transforme seu original em uma <br/><span className="text-white italic font-light lowercase">obra-prima</span>
           </h1>
-          <p className="text-text-secondary text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed reveal-up mt-8">
+          <p className="text-text-secondary text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed reveal-up mt-8 mb-10 md:mb-12">
             Editora focada em excelência literária. Do manuscrito à estante, tratamos cada livro como arte.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row gap-4 justify-center">
