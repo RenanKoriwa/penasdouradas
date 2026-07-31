@@ -218,13 +218,13 @@ export default function Home() {
             <div className="w-full md:w-1/2 reveal-up">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-px bg-accent" />
-                <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide">Aprenda a Escrever</h2>
+                <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide leading-tight">Produção Literária<br/> e Empreendedorismo</h2>
               </div>
               <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 font-light">
-                A escrita é uma jornada. Nós oferecemos mentorias, avaliações críticas e materiais para que você desenvolva sua voz autoral, construa personagens cativantes e estruture uma narrativa memorável.
+                <strong>Da Concepção À Publicação.</strong> O guia definitivo de Alberto Kuzoma para escritores em formação, estreantes e experientes. Descubra os segredos para transformar suas ideias em obras-primas e dominar as estratégias do mercado editorial contemporâneo.
               </p>
               <Link href="/servicos" className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-bold group hover:text-white transition-colors">
-                Conhecer Mentorias
+                Adquirir o Livro
                 <span className="w-6 h-px bg-accent group-hover:bg-white group-hover:w-8 transition-all" />
               </Link>
             </div>
