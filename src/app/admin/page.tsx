@@ -33,11 +33,20 @@ export default function AdminPage() {
     fetch("/api/config")
       .then(res => res.json())
       .then(data => {
-        const services = (data.services || []).map((s: any) => ({
-          ...s,
-          content: s.content || "",
-        }));
-        setConfig({ ...data, services });
+        if (data.error) {
+          console.error("API Error:", data.error);
+        } else {
+          const services = (data.services || []).map((s: any) => ({
+            ...s,
+            content: s.content || "",
+          }));
+          setConfig({ ...data, services });
+        }
+      })
+      .catch(err => {
+        console.error("Failed to fetch config:", err);
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, []);
