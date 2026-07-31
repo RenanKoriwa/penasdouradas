@@ -81,6 +81,7 @@ export default function Home() {
   };
 
   const waLink = `https://wa.me/${whatsapp.replace(/\D/g, '')}`;
+  const waLinkBook = `https://wa.me/${whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre o livro Produção Literária e Empreendedorismo.')}`;
 
   return (
     <div ref={containerRef} className="bg-bg text-text-primary">
@@ -223,10 +224,10 @@ export default function Home() {
               <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 font-light">
                 <strong>Da Concepção À Publicação.</strong> O guia definitivo de Alberto Kuzoma para escritores em formação, estreantes e experientes. Descubra os segredos para transformar suas ideias em obras-primas e dominar as estratégias do mercado editorial contemporâneo.
               </p>
-              <Link href="/servicos" className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-bold group hover:text-white transition-colors">
+              <a href={waLinkBook} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-bold group hover:text-white transition-colors">
                 Adquirir o Livro
                 <span className="w-6 h-px bg-accent group-hover:bg-white group-hover:w-8 transition-all" />
-              </Link>
+              </a>
             </div>
             <div className="w-full md:w-1/2 reveal-up">
               <div className="w-full max-w-md mx-auto shadow-[0_0_40px_rgba(212,175,55,0.1)] rounded-sm overflow-hidden border border-white/5">
