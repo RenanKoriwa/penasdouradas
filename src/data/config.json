@@ -1,0 +1,29 @@
+{
+  "whatsapp": "5511999999999",
+  "location": "São Paulo, SP",
+  "password": "admin",
+  "about": "<p>Fundada com a premissa de que toda grande história começa com um mistério irremediável, a Penas Douradas surgiu para preencher uma lacuna no mercado editorial brasileiro: a publicação premium focada exclusivamente em thrillers e romances de suspense.</p><p>Cada livro publicado sob o nosso selo passa por um crivo rigoroso, garantindo que apenas as melhores narrativas cheguem às estantes. Tratamos a literatura como arte e o livro como um objeto de desejo.</p>",
+  "services": [
+    {
+      "id": "1",
+      "title": "Avaliação de Manuscritos",
+      "description": "Um mergulho profundo na sua história. Nossa equipe de leitura sensível e crítica apontará furos no enredo, ritmo da narrativa e desenvolvimento de personagens, garantindo que o mistério seja infalível.",
+      "features": ["Análise estrutural", "Relatório detalhado", "Reunião de feedback"],
+      "content": ""
+    },
+    {
+      "id": "2",
+      "title": "Publicação Tradicional",
+      "description": "Seu livro com a qualidade de uma verdadeira obra-prima. Assumimos todos os custos de produção, desde a preparação do texto, projeto gráfico premium até a distribuição física e digital.",
+      "features": ["Capa exclusiva", "Revisão profissional", "Lançamento oficial"],
+      "content": ""
+    },
+    {
+      "id": "3",
+      "title": "Produção Literária",
+      "description": "Mentoria contínua para autores que possuem uma grande ideia, mas precisam de orientação técnica para transformá-la em um romance completo e imersivo.",
+      "features": ["Escrita assistida", "Estruturação de plot", "Acompanhamento editorial"],
+      "content": ""
+    }
+  ]
+}
