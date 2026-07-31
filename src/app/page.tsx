@@ -241,8 +241,8 @@ export default function Home() {
               </p>
             </div>
             <div className="w-full md:w-1/2 reveal-up md:order-1">
-              <div className="relative aspect-[3/4] w-full max-w-sm mx-auto shadow-[0_0_40px_rgba(212,175,55,0.1)] rounded-sm overflow-hidden border border-white/5 group hover:border-accent/30 transition-colors">
-                <Image src="/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg" alt="Como ficará seu livro" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+              <div className="w-full max-w-md mx-auto shadow-[0_0_40px_rgba(212,175,55,0.1)] rounded-sm overflow-hidden border border-white/5 group hover:border-accent/30 transition-colors">
+                <Image src="/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg" alt="Como ficará seu livro" width={800} height={800} className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out" />
               </div>
             </div>
           </div>
