@@ -47,7 +47,7 @@ export default function Home() {
 
 // ... add to imports if missing, but we already have useState and useEffect.
   const books = [
-    { src: "/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg", alt: "Capa do Livro 1" },
+    { src: "/images/WhatsApp Image 2026-07-31 at 08.51.06.jpeg", alt: "Capa do Livro 1" },
     { src: "/images/IMG-20260730-WA0109.jpg.jpeg", alt: "Capa do Livro 2" },
     { src: "/images/Screenshot_20260528-170823.jpg", alt: "Capa do Livro 3" },
   ];
@@ -211,7 +211,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══ LEARN TO WRITE ═══ */}
+      <section className="py-16 md:py-24 bg-surface">
+        <div className="container mx-auto px-6 lg:px-12 max-w-4xl text-center reveal-up">
+          <div className="flex justify-center mb-4 text-accent/80">
+            <PenIcon className="w-8 h-8" />
+          </div>
+          <h2 className="font-serif text-2xl md:text-3xl uppercase tracking-wide mb-4">Aprenda a Escrever</h2>
+          <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-light mb-8">
+            A escrita é uma jornada. Nós oferecemos mentorias, avaliações críticas e materiais para que você desenvolva sua voz autoral, construa personagens cativantes e estruture uma narrativa memorável.
+          </p>
+          <Link href="/servicos" className="border border-accent text-accent px-8 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-accent hover:text-bg transition-colors inline-block rounded-sm">
+            Conhecer Mentorias
+          </Link>
+        </div>
+      </section>
 
+      {/* ═══ FINAL RESULT PREVIEW ═══ */}
+      <section className="py-16 md:py-24 bg-bg relative border-t border-white/5">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-16">
+            <div className="w-full md:w-1/2 reveal-up md:order-2">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-px bg-accent" />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide">O Resultado Final</h2>
+              </div>
+              <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 font-light">
+                Do projeto gráfico impecável ao acabamento físico de alto nível, sua história ganha vida com uma apresentação digna de um best-seller. Nós garantimos que o seu livro seja um objeto de desejo para os leitores.
+              </p>
+            </div>
+            <div className="w-full md:w-1/2 reveal-up md:order-1">
+              <div className="relative aspect-[3/4] w-full max-w-sm mx-auto shadow-[0_0_40px_rgba(212,175,55,0.1)] rounded-sm overflow-hidden border border-white/5 group hover:border-accent/30 transition-colors">
+                <Image src="/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg" alt="Como ficará seu livro" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ═══ CTA SECTION ═══ */}
       <section className="py-16 bg-bg relative overflow-hidden">
