@@ -47,9 +47,9 @@ export default function Home() {
 
 // ... add to imports if missing, but we already have useState and useEffect.
   const books = [
-    { src: "/images/WhatsApp Image 2026-07-31 at 08.51.06.jpeg", alt: "Dolce Vendetta" },
-    { src: "/images/Screenshot_20260528-170823.jpg", alt: "A Onça Pintada" },
-    { src: "/images/IMG-20260602-WA0046.jpg.jpeg", alt: "Além do Rio" },
+    { src: "/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg", alt: "Capa do Livro 1" },
+    { src: "/images/IMG-20260730-WA0109.jpg.jpeg", alt: "Capa do Livro 2" },
+    { src: "/images/Screenshot_20260528-170823.jpg", alt: "Capa do Livro 3" },
   ];
 
   const [activeBook, setActiveBook] = useState(0);
@@ -113,8 +113,8 @@ export default function Home() {
           <h1 className="hero-anim font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.2] mb-5 uppercase tracking-[0.15em] gold-foil">
             Transforme seu original em uma <br/><span className="text-white italic font-light lowercase">obra-prima</span>
           </h1>
-          <p className="hero-anim text-text-secondary text-base md:text-lg mb-8 font-light max-w-xl mx-auto">
-            Editora premium especializada em thrillers e romances de suspense. Do manuscrito à estante, tratamos cada livro como arte.
+          <p className="text-text-secondary text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed reveal-up mt-8">
+            Editora focada em excelência literária. Do manuscrito à estante, tratamos cada livro como arte.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -168,11 +168,11 @@ export default function Home() {
                 <div className="w-8 h-px bg-accent" />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide">A Penas Douradas</h2>
               </div>
-              <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-4 font-light">
-                Fundada com a premissa de que toda grande história começa com um mistério irremediável, somos focados exclusivamente na publicação de thrillers e literatura de suspense.
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Fundada com a premissa de que toda grande história começa com uma página em branco, somos focados na publicação de obras literárias de alto nível.
               </p>
               <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 font-light">
-                Não somos apenas uma gráfica. Criamos universos onde o leitor sente a tensão desde a capa até a última palavra. Nossa excelência editorial garante que cada detalhe importe.
+                Não apenas imprimimos livros. Criamos universos onde o leitor sente a tensão desde a capa até a última palavra. Nossa excelência editorial garante que cada detalhe importe.
               </p>
               <Link href="/sobre" className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-bold group hover:text-white transition-colors">
                 Leia nossa história

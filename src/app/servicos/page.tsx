@@ -68,7 +68,7 @@ export default function ServicosPage() {
             Nossos Serviços
           </h1>
           <p className="text-text-secondary text-sm md:text-base font-light anim-header">
-            Da avaliação crítica à publicação completa. Modelos desenhados para autores que buscam excelência no gênero thriller e suspense.
+            Da avaliação crítica à publicação completa. Modelos desenhados para autores que buscam excelência literária.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full gold-line" />

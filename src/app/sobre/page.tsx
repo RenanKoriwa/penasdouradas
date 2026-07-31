@@ -69,8 +69,8 @@ export default function Sobre() {
           <h1 className="font-serif text-3xl md:text-4xl uppercase tracking-widest mb-4 anim-header gold-foil">
             A Editora
           </h1>
-          <p className="text-text-secondary text-sm md:text-base font-light anim-header">
-            Descubra quem somos e por que o suspense é a nossa especialidade.
+          <p className="text-text-secondary text-sm md:text-base font-light anim-header max-w-xl mx-auto">
+            Descubra quem somos e por que a literatura é a nossa paixão.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full gold-line" />
@@ -80,13 +80,13 @@ export default function Sobre() {
       <section className="py-24 md:py-32 bg-bg relative">
         <div className="absolute left-0 top-20 w-px h-32 bg-gradient-to-b from-transparent via-accent/30 to-transparent hidden md:block" />
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
-          <div className="flex flex-col md:flex-row gap-10 lg:gap-16">
+          <div className="flex flex-col md:flex-row gap-10 lg:gap-16 items-start">
             <div className="md:w-1/3 shrink-0 reveal-up">
               <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide border-l border-accent pl-4 py-1">
                 Nossa<br />História
               </h2>
             </div>
-            <div className="md:w-2/3 text-text-secondary text-sm md:text-base font-light leading-relaxed reveal-up rich-text-content" dangerouslySetInnerHTML={{ __html: aboutText || "<p>Fundada com a premissa de que toda grande história começa com um mistério irremediável, a Penas Douradas surgiu para preencher uma lacuna no mercado editorial brasileiro: a publicação premium focada exclusivamente em thrillers e romances de suspense.</p><p>Cada livro publicado sob o nosso selo passa por um crivo rigoroso, garantindo que apenas as melhores narrativas cheguem às estantes. Tratamos a literatura como arte e o livro como um objeto de desejo.</p>" }} />
+            <div className="md:w-2/3 text-text-secondary text-sm md:text-base font-light leading-relaxed reveal-up rich-text-content" dangerouslySetInnerHTML={{ __html: aboutText || "<p>Fundada com a premissa de que toda grande história começa com uma página em branco, a Penas Douradas surgiu para preencher uma lacuna no mercado editorial brasileiro: a publicação cuidadosa de obras literárias de alto nível.</p><p>Cada livro publicado sob o nosso selo passa por um crivo rigoroso, garantindo que apenas as melhores narrativas cheguem às estantes. Tratamos a literatura como arte e o livro como um objeto de desejo.</p>" }} />
           </div>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function Sobre() {
                 A Visão
               </h3>
               <p className="text-text-secondary text-sm font-light leading-relaxed">
-                Tornar-se a principal referência no mercado lusófono na publicação de thrillers e literatura de suspense, com um padrão-ouro em design, qualidade gráfica e narrativa.
+                Tornar-se a principal referência no mercado lusófono na publicação de literatura contemporânea, com um padrão-ouro em design, qualidade gráfica e narrativa.
               </p>
             </div>
           </div>

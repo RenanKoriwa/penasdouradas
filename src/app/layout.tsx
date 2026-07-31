@@ -21,7 +21,7 @@ const cinzel = Cinzel({
 
 export const metadata: Metadata = {
   title: "Editora Penas Douradas",
-  description: "Publicando o melhor do thriller e suspense.",
+  description: "Publicando o melhor da literatura contemporânea.",
 };
 
 export default function RootLayout({

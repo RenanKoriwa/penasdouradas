@@ -52,7 +52,7 @@ export default function Footer() {
         </Link>
 
         <p className="font-serif italic text-text-secondary/70 text-sm md:text-base max-w-lg mb-10">
-          "A verdadeira arte do suspense está naquilo que não é revelado."
+          "A verdadeira arte da literatura está naquilo que nos faz sentir."
         </p>
 
         <div className="gold-line mb-10 max-w-sm" />
