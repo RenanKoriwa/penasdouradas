@@ -213,17 +213,27 @@ export default function Home() {
 
       {/* ═══ LEARN TO WRITE ═══ */}
       <section className="py-16 md:py-24 bg-surface">
-        <div className="container mx-auto px-6 lg:px-12 max-w-4xl text-center reveal-up">
-          <div className="flex justify-center mb-4 text-accent/80">
-            <PenIcon className="w-8 h-8" />
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-16">
+            <div className="w-full md:w-1/2 reveal-up">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-px bg-accent" />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide">Aprenda a Escrever</h2>
+              </div>
+              <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 font-light">
+                A escrita é uma jornada. Nós oferecemos mentorias, avaliações críticas e materiais para que você desenvolva sua voz autoral, construa personagens cativantes e estruture uma narrativa memorável.
+              </p>
+              <Link href="/servicos" className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-bold group hover:text-white transition-colors">
+                Conhecer Mentorias
+                <span className="w-6 h-px bg-accent group-hover:bg-white group-hover:w-8 transition-all" />
+              </Link>
+            </div>
+            <div className="w-full md:w-1/2 reveal-up">
+              <div className="w-full max-w-md mx-auto shadow-[0_0_40px_rgba(212,175,55,0.1)] rounded-sm overflow-hidden border border-white/5">
+                <img src="/images/IMG-20260730-WA0109.jpg.jpeg" alt="Aprenda a Escrever" className="w-full h-auto object-contain" />
+              </div>
+            </div>
           </div>
-          <h2 className="font-serif text-2xl md:text-3xl uppercase tracking-wide mb-4">Aprenda a Escrever</h2>
-          <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-light mb-8">
-            A escrita é uma jornada. Nós oferecemos mentorias, avaliações críticas e materiais para que você desenvolva sua voz autoral, construa personagens cativantes e estruture uma narrativa memorável.
-          </p>
-          <Link href="/servicos" className="border border-accent text-accent px-8 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-accent hover:text-bg transition-colors inline-block rounded-sm">
-            Conhecer Mentorias
-          </Link>
         </div>
       </section>
 
@@ -242,7 +252,7 @@ export default function Home() {
             </div>
             <div className="w-full md:w-1/2 reveal-up md:order-1">
               <div className="w-full max-w-md mx-auto shadow-[0_0_40px_rgba(212,175,55,0.1)] rounded-sm overflow-hidden border border-white/5 group hover:border-accent/30 transition-colors">
-                <Image src="/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg" alt="Como ficará seu livro" width={800} height={800} className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-out" />
+                <img src="/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg" alt="Como ficará seu livro" className="w-full h-auto group-hover:scale-105 transition-transform duration-700 ease-out" />
               </div>
             </div>
           </div>
