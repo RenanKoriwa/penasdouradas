@@ -112,10 +112,10 @@ export default function Home() {
             <PenIcon className="w-10 h-10" />
           </div>
           <h1 className="hero-anim font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.2] mb-5 uppercase tracking-[0.15em] gold-foil">
-            Transforme seu original em uma <br/><span className="text-white italic font-light lowercase">obra-prima</span>
+            Uma via democrática para publicar sua <br/><span className="text-white italic font-light lowercase">obra</span>
           </h1>
           <p className="text-text-secondary text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed reveal-up mt-8 mb-10 md:mb-12">
-            Editora focada em excelência literária. Do manuscrito à estante, tratamos cada livro como arte.
+            Na PENAS DOURADAS – Editora, acreditamos que toda grande história merece a oportunidade de alcançar seus leitores.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -169,11 +169,14 @@ export default function Home() {
                 <div className="w-8 h-px bg-accent" />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide">A Penas Douradas</h2>
               </div>
-              <p className="text-text-secondary text-sm leading-relaxed mb-6">
-                Fundada com a premissa de que toda grande história começa com uma página em branco, somos focados na publicação de obras literárias de alto nível.
+              <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                Nossa missão é oferecer aos escritores uma forma moderna, transparente e simplificada de publicar seus livros, respeitando sua autonomia criativa e valorizando cada etapa do processo editorial.
               </p>
-              <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 font-light">
-                Não apenas imprimimos livros. Criamos universos onde o leitor sente a tensão desde a capa até a última palavra. Nossa excelência editorial garante que cada detalhe importe.
+              <p className="text-text-secondary text-sm leading-relaxed mb-4 font-light">
+                Atendemos autores iniciantes, escritores em desenvolvimento e autores experientes, oferecendo soluções editoriais flexíveis por meio do modelo de publicação híbrida. No entanto, reconhecemos que somos rigorosos na seleção das obras, mas oferecemos flexibilidade após a aprovação do manuscrito.
+              </p>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6 font-light">
+                Seja qual for o estágio da sua obra, estamos preparados para ajudá-lo a transformá-la em um livro de qualidade.
               </p>
               <Link href="/sobre" className="inline-flex items-center gap-2 text-accent text-xs uppercase tracking-widest font-bold group hover:text-white transition-colors">
                 Leia nossa história

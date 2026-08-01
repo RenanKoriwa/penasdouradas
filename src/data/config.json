@@ -1,28 +1,28 @@
 {
-  "whatsapp": "5511999999999",
-  "location": "São Paulo, SP",
+  "whatsapp": "5511962241386",
+  "location": "Jardim São Paulo, São Paulo",
   "password": "admin",
-  "about": "<p>Fundada com a premissa de que toda grande história começa com um mistério irremediável, a Penas Douradas surgiu para preencher uma lacuna no mercado editorial brasileiro: a publicação premium focada exclusivamente em thrillers e romances de suspense.</p><p>Cada livro publicado sob o nosso selo passa por um crivo rigoroso, garantindo que apenas as melhores narrativas cheguem às estantes. Tratamos a literatura como arte e o livro como um objeto de desejo.</p>",
+  "about": "<p>A PENAS DOURADAS – Editora é uma editora sedeada no bairro Jardim São Paulo na cidade de São Paulo. Ela nasceu com o propósito de democratizar a publicação de livros, tornando o mercado editorial mais acessível aos escritores.</p><p>Nossa filosofia baseia-se na valorização do autor. Entendemos que cada obra representa anos de dedicação, pesquisa e criatividade. Por isso, buscamos estabelecer uma relação de confiança, respeito e transparência durante todo o processo editorial.</p><p>Trabalhamos também com publicação híbrida, modelo que permite ao autor participar ativamente da produção do livro, reduzindo custos e mantendo total liberdade sobre seu projeto.</p><p>Mais do que publicar livros, ajudamos autores a concretizar sonhos.</p>",
   "services": [
     {
       "id": "1",
-      "title": "Avaliação de Manuscritos",
-      "description": "Um mergulho profundo na sua história. Nossa equipe de leitura sensível e crítica apontará furos no enredo, ritmo da narrativa e desenvolvimento de personagens, garantindo que o mistério seja infalível.",
-      "features": ["Análise estrutural", "Relatório detalhado", "Reunião de feedback"],
+      "title": "Revisão e Tradução",
+      "description": "Oferecemos revisão de texto e tradução grátis para as obras selecionadas, ampliando o alcance nacional e internacional.",
+      "features": ["Correção ortográfica e gramatical", "Tradução gratuita", "Apoio editorial garantido"],
       "content": ""
     },
     {
       "id": "2",
-      "title": "Publicação Tradicional",
-      "description": "Seu livro com a qualidade de uma verdadeira obra-prima. Assumimos todos os custos de produção, desde a preparação do texto, projeto gráfico premium até a distribuição física e digital.",
-      "features": ["Capa exclusiva", "Revisão profissional", "Lançamento oficial"],
+      "title": "Produção Gráfica e Impressão",
+      "description": "Impressão sob responsabilidade da editora com excelente padrão de qualidade.",
+      "features": ["Impressão de alta qualidade", "Produção gráfica premium", "Distribuição"],
       "content": ""
     },
     {
       "id": "3",
-      "title": "Produção Literária",
-      "description": "Mentoria contínua para autores que possuem uma grande ideia, mas precisam de orientação técnica para transformá-la em um romance completo e imersivo.",
-      "features": ["Escrita assistida", "Estruturação de plot", "Acompanhamento editorial"],
+      "title": "Serviços Opcionais",
+      "description": "Serviços complementares realizados pela editora com o investimento de R$ 300,00 cada, para autores que desejam nossa execução.",
+      "features": ["Criação da capa", "Diagramação profissional", "Registros autorais"],
       "content": ""
     }
   ]

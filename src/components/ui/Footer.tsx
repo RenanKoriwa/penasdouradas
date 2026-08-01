@@ -52,18 +52,23 @@ export default function Footer() {
         </Link>
 
         <p className="font-serif italic text-text-secondary/70 text-sm md:text-base max-w-lg mb-10">
-          "A verdadeira arte da literatura está naquilo que nos faz sentir."
+          "Com a nossa pena, sua pena torna-se história."
         </p>
 
         <div className="gold-line mb-10 max-w-sm" />
 
-        <nav className="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-12 font-serif text-xs md:text-sm tracking-[0.2em] text-text-secondary uppercase">
+        <nav className="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-8 font-serif text-xs md:text-sm tracking-[0.2em] text-text-secondary uppercase">
           <Link href="/servicos" className="hover:text-accent transition-colors">Serviços</Link>
           <Link href="/sobre" className="hover:text-accent transition-colors">A Editora</Link>
           <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
             WhatsApp
           </a>
         </nav>
+
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12 text-xs tracking-widest text-text-muted font-light">
+          <a href="mailto:livrosdourados230@gmail.com" className="hover:text-accent transition-colors">livrosdourados230@gmail.com</a>
+          <a href="https://instagram.com/livrosdourados8" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">@livrosdourados8</a>
+        </div>
 
         <div className="flex flex-col items-center gap-2">
           <p className="text-text-muted text-[10px] tracking-widest font-light uppercase">

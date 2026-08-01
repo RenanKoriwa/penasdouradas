@@ -86,7 +86,7 @@ export default function Sobre() {
                 Nossa<br />História
               </h2>
             </div>
-            <div className="md:w-2/3 text-text-secondary text-sm md:text-base font-light leading-relaxed reveal-up rich-text-content" dangerouslySetInnerHTML={{ __html: aboutText || "<p>Fundada com a premissa de que toda grande história começa com uma página em branco, a Penas Douradas surgiu para preencher uma lacuna no mercado editorial brasileiro: a publicação cuidadosa de obras literárias de alto nível.</p><p>Cada livro publicado sob o nosso selo passa por um crivo rigoroso, garantindo que apenas as melhores narrativas cheguem às estantes. Tratamos a literatura como arte e o livro como um objeto de desejo.</p>" }} />
+            <div className="md:w-2/3 text-text-secondary text-sm md:text-base font-light leading-relaxed reveal-up rich-text-content" dangerouslySetInnerHTML={{ __html: aboutText || "<p>A PENAS DOURADAS – Editora é uma editora sedeada no bairro Jardim São Paulo na cidade de São Paulo. Ela nasceu com o propósito de democratizar a publicação de livros, tornando o mercado editorial mais acessível aos escritores.</p><p>Nossa filosofia baseia-se na valorização do autor. Entendemos que cada obra representa anos de dedicação, pesquisa e criatividade. Por isso, buscamos estabelecer uma relação de confiança, respeito e transparência durante todo o processo editorial.</p><p>Trabalhamos também com publicação híbrida, modelo que permite ao autor participar ativamente da produção do livro, reduzindo custos e mantendo total liberdade sobre seu projeto.</p><p>Mais do que publicar livros, ajudamos autores a concretizar sonhos.</p>" }} />
           </div>
         </div>
       </section>
