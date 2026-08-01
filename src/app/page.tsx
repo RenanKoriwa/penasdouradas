@@ -235,8 +235,10 @@ export default function Home() {
               </a>
             </div>
             <div className="w-full md:w-1/2 reveal-up">
-              <div className="w-full max-w-md mx-auto shadow-[0_0_40px_rgba(212,175,55,0.1)] rounded-sm overflow-hidden border border-white/5">
-                <img src="/images/IMG-20260730-WA0109.jpg.jpeg" alt="Aprenda a Escrever" className="w-full h-auto object-contain" />
+              <div className="w-full max-w-md mx-auto p-2 border-2 border-accent/40 shadow-[0_0_40px_rgba(212,175,55,0.1),inset_0_0_20px_rgba(212,175,55,0.05)]">
+                <div className="border border-accent/20 overflow-hidden">
+                  <img src="/images/IMG-20260730-WA0109.jpg.jpeg" alt="Produção Literária e Empreendedorismo" className="w-full h-auto object-contain" />
+                </div>
               </div>
             </div>
           </div>
@@ -257,8 +259,10 @@ export default function Home() {
               </p>
             </div>
             <div className="w-full md:w-1/2 reveal-up md:order-1">
-              <div className="w-full max-w-md mx-auto shadow-[0_0_40px_rgba(212,175,55,0.1)] rounded-sm overflow-hidden border border-white/5 group hover:border-accent/30 transition-colors">
-                <img src="/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg" alt="Como ficará seu livro" className="w-full h-auto group-hover:scale-105 transition-transform duration-700 ease-out" />
+              <div className="w-full max-w-md mx-auto p-2 border-2 border-accent/40 shadow-[0_0_40px_rgba(212,175,55,0.1),inset_0_0_20px_rgba(212,175,55,0.05)] group">
+                <div className="border border-accent/20 overflow-hidden">
+                  <img src="/images/WhatsApp Image 2026-07-31 at 08.51.32.jpeg" alt="Como ficará seu livro" className="w-full h-auto group-hover:scale-105 transition-transform duration-700 ease-out" />
+                </div>
               </div>
             </div>
           </div>
