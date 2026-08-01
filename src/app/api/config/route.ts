@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 import fs from 'fs/promises';
 import path from 'path';
-import DOMPurify from 'isomorphic-dompurify';
 import { revalidatePath } from 'next/cache';
 import { fetchConfig } from '@/lib/config';
 
@@ -31,11 +30,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
     }
 
-    if (body.about) body.about = DOMPurify.sanitize(body.about);
     if (body.services && Array.isArray(body.services)) {
       body.services = body.services.map((s: any) => ({
         ...s,
-        content: s.content ? DOMPurify.sanitize(s.content) : ""
+        content: s.content || ""
       }));
     }
 
