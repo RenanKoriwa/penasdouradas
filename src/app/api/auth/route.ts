@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { fetchConfig, hashPassword } from '@/lib/config';
+import { fetchConfig } from '@/lib/config';
 
 export async function POST(request: Request) {
   try {
@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     // Ler os dados atuais do banco de dados (Google Sheets ou local fallback)
     const data: any = await fetchConfig();
 
-    if (body.password && hashPassword(body.password) === data.password) {
+    if (body.password && body.password === data.password) {
       return NextResponse.json({ success: true });
     } else {
       return NextResponse.json({ success: false, error: 'Senha incorreta' }, { status: 401 });

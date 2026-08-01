@@ -3,11 +3,7 @@ import path from 'path';
 import crypto from 'crypto';
 
 const dataFilePath = path.join(process.cwd(), 'src', 'data', 'config.json');
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxGRw_5cy9DXQ1T07brIMVtywRLolIzvyNmtOfPkDRGjdAgkY0bXBZXuTAGYoT00UZ1/exec?v=2';
-
-export function hashPassword(password: string) {
-  return crypto.createHash('sha256').update(password).digest('hex');
-}
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxGRw_5cy9DXQ1T07brIMVtywRLolIzvyNmtOfPkDRGjdAgkY0bXBZXuTAGYoT00UZ1/exec?v=3';
 
 export async function fetchConfig() {
   let localData = {};
