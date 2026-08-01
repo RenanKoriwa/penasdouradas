@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${cinzel.variable} antialiased`}
+      className={`${inter.variable} ${cinzel.variable} antialiased overflow-x-hidden`}
     >
       <body className="min-h-screen flex flex-col bg-bg text-text-primary selection:bg-accent selection:text-bg overflow-x-hidden">
         <SmoothScrollProvider>
