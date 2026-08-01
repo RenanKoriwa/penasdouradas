@@ -111,42 +111,42 @@ export default function ServicosPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-accent text-accent uppercase text-xs tracking-widest">
-                    <th className="py-4 px-4">Etapa</th>
-                    <th className="py-4 px-4 text-center">Autor</th>
-                    <th className="py-4 px-4 text-center">Editora</th>
+                  <tr className="border-b-2 border-accent/40 text-accent uppercase text-xs tracking-widest">
+                    <th className="py-4 px-5">Etapa</th>
+                    <th className="py-4 px-5 text-center">Autor</th>
+                    <th className="py-4 px-5 text-center">Editora</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm font-light text-text-secondary">
-                  <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 text-white">Concepção da capa</td>
-                    <td className="py-4 px-4 text-center text-accent">✓</td>
-                    <td className="py-4 px-4 text-center">Opcional</td>
+                  <tr className="border-b border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                    <td className="py-4 px-5 text-white">Concepção da capa</td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
+                    <td className="py-4 px-5 text-center text-text-muted italic text-xs">Opcional</td>
                   </tr>
-                  <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 text-white">Diagramação</td>
-                    <td className="py-4 px-4 text-center text-accent">✓</td>
-                    <td className="py-4 px-4 text-center">Opcional</td>
+                  <tr className="border-b border-white/5 hover:bg-white/[0.05] transition-colors">
+                    <td className="py-4 px-5 text-white">Diagramação</td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
+                    <td className="py-4 px-5 text-center text-text-muted italic text-xs">Opcional</td>
                   </tr>
-                  <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 text-white">Registros autorais</td>
-                    <td className="py-4 px-4 text-center text-accent">✓</td>
-                    <td className="py-4 px-4 text-center">Opcional</td>
+                  <tr className="border-b border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                    <td className="py-4 px-5 text-white">Registros autorais</td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
+                    <td className="py-4 px-5 text-center text-text-muted italic text-xs">Opcional</td>
                   </tr>
-                  <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 text-white">Revisão do texto</td>
-                    <td className="py-4 px-4 text-center text-accent"></td>
-                    <td className="py-4 px-4 text-center text-accent">✓</td>
+                  <tr className="border-b border-white/5 hover:bg-white/[0.05] transition-colors">
+                    <td className="py-4 px-5 text-white">Revisão do texto</td>
+                    <td className="py-4 px-5 text-center"></td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
                   </tr>
-                  <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 text-white">Tradução</td>
-                    <td className="py-4 px-4 text-center text-accent"></td>
-                    <td className="py-4 px-4 text-center text-accent">✓</td>
+                  <tr className="border-b border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
+                    <td className="py-4 px-5 text-white">Tradução</td>
+                    <td className="py-4 px-5 text-center"></td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
                   </tr>
-                  <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-4 text-white">Impressão</td>
-                    <td className="py-4 px-4 text-center text-accent"></td>
-                    <td className="py-4 px-4 text-center text-accent">✓</td>
+                  <tr className="border-b border-accent/10 hover:bg-white/[0.05] transition-colors">
+                    <td className="py-4 px-5 text-white">Impressão</td>
+                    <td className="py-4 px-5 text-center"></td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
                   </tr>
                 </tbody>
               </table>

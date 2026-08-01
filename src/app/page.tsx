@@ -87,7 +87,7 @@ export default function Home() {
     <div ref={containerRef} className="bg-bg text-text-primary">
       
       {/* ═══ HERO SECTION ═══ */}
-      <section className="relative w-full min-h-[90vh] pt-32 pb-24 md:pt-48 md:pb-32 flex items-center justify-center border-b border-white/5 overflow-hidden">
+      <section className="relative w-full pt-28 pb-16 md:pt-40 md:pb-24 flex items-center justify-center border-b border-white/5 overflow-hidden">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0 opacity-5">
           <Image
@@ -104,17 +104,19 @@ export default function Home() {
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] glow-accent rounded-full pointer-events-none" />
 
-        {/* Floating gold dust (creative touch) */}
-        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-accent rounded-full opacity-50 shadow-[0_0_10px_2px_#D4AF37]" />
+        {/* Slogan as typographic background texture */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-serif text-[6vw] md:text-[4vw] uppercase tracking-[0.3em] text-white/[0.03] pointer-events-none select-none" aria-hidden="true">
+          Com a nossa pena, sua pena torna-se história
+        </div>
 
         <div className="container relative mx-auto px-6 lg:px-12 text-center max-w-3xl z-10">
-          <div className="flex justify-center mb-4 text-accent hero-anim">
-            <PenIcon className="w-10 h-10" />
+          <div className="flex justify-center mb-3 text-accent hero-anim">
+            <PenIcon className="w-9 h-9" />
           </div>
-          <h1 className="hero-anim font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.2] mb-5 uppercase tracking-[0.15em] gold-foil">
+          <h1 className="hero-anim font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.15] mb-4 uppercase tracking-[0.15em] gold-foil">
             Uma via democrática para publicar sua <br/><span className="text-white italic font-light lowercase">obra</span>
           </h1>
-          <p className="text-text-secondary text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed reveal-up mt-8 mb-10 md:mb-12">
+          <p className="text-text-secondary text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed reveal-up mt-5 mb-8">
             Na PENAS DOURADAS – Editora, acreditamos que toda grande história merece a oportunidade de alcançar seus leitores.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row gap-4 justify-center">
@@ -122,13 +124,13 @@ export default function Home() {
               href={waLink}
               target="_blank"
               rel="noreferrer"
-              className="bg-accent text-bg px-6 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-white transition-colors"
+              className="bg-accent text-bg px-6 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-white hover:scale-105 hover:shadow-[0_4px_20px_rgba(212,175,55,0.3)] transition-all duration-300"
             >
               Publicar meu Livro
             </a>
             <Link
               href="/sobre"
-              className="border border-accent/50 text-accent px-6 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-accent/5 hover:border-accent transition-colors"
+              className="border border-accent/50 text-accent px-6 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-accent/5 hover:border-accent hover:scale-105 transition-all duration-300"
             >
               Conheça a Editora
             </Link>
@@ -275,7 +277,7 @@ export default function Home() {
             href={waLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-block bg-accent text-bg px-8 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-white hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all rounded-sm"
+            className="inline-block bg-accent text-bg px-8 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-white hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 rounded-sm"
           >
             Falar com a Editora
           </a>

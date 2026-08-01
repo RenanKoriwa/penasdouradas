@@ -96,31 +96,33 @@ export default function Navbar() {
         <X size={28} strokeWidth={1} />
       </button>
       
-      <div className="w-16 h-16 relative mb-8">
+      <div className={`w-16 h-16 relative mb-8 transition-all duration-500 delay-100 ${isMobileOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
         <Image src="/images/logo-png.png" alt="Logo" fill className="object-contain" />
       </div>
-      <span className="font-serif text-sm tracking-[0.25em] text-accent leading-none mb-12">
+      <span className={`font-serif text-sm tracking-[0.25em] text-accent leading-none mb-12 transition-all duration-500 delay-200 ${isMobileOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
         PENAS DOURADAS
       </span>
 
       <nav className="flex flex-col items-center gap-8">
-        {links.map((l) => (
+        {links.map((l, i) => (
           <Link 
             key={l.name} 
             href={l.href} 
             onClick={() => setIsMobileOpen(false)} 
-            className="text-lg font-serif uppercase tracking-[0.2em] text-text-secondary hover:text-accent transition-colors"
+            className={`text-lg font-serif uppercase tracking-[0.2em] text-text-secondary hover:text-accent transition-all duration-500 ${isMobileOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            style={{ transitionDelay: isMobileOpen ? `${300 + i * 100}ms` : '0ms' }}
           >
             {l.name}
           </Link>
         ))}
-        <div className="w-8 h-px bg-accent/30 my-4" />
+        <div className={`w-8 h-px bg-accent/30 my-4 transition-all duration-500 ${isMobileOpen ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`} style={{ transitionDelay: isMobileOpen ? '600ms' : '0ms' }} />
         <a 
           href={waLink} 
           target="_blank" 
           rel="noreferrer" 
           onClick={() => setIsMobileOpen(false)} 
-          className="text-accent border border-accent px-8 py-3 font-serif text-sm uppercase tracking-[0.2em] hover:bg-accent hover:text-bg transition-colors"
+          className={`text-accent border border-accent px-8 py-3 font-serif text-sm uppercase tracking-[0.2em] hover:bg-accent hover:text-bg hover:scale-105 transition-all duration-500 ${isMobileOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+          style={{ transitionDelay: isMobileOpen ? '700ms' : '0ms' }}
         >
           Fale Conosco
         </a>
