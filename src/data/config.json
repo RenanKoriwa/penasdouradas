@@ -26,5 +26,31 @@
       "features": ["Criação da capa", "Diagramação profissional", "Registros autorais"],
       "content": ""
     }
+  ],
+  "genres": [
+    {
+      "id": "literatura",
+      "title": "Literatura",
+      "items": [
+        "Romances",
+        "Poesia",
+        "Contos infantis"
+      ]
+    },
+    {
+      "id": "conhecimento",
+      "title": "Conhecimento",
+      "items": [
+        "Livros técnicos",
+        "(aprendizagem de línguas, literatura etc)"
+      ]
+    },
+    {
+      "id": "espiritualidade",
+      "title": "Espiritualidade",
+      "items": [
+        "Espiritualidade cristã"
+      ]
+    }
   ]
 }

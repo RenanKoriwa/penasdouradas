@@ -13,6 +13,12 @@ interface Service {
   description: string;
 }
 
+interface Genre {
+  id: string;
+  title: string;
+  items: string[];
+}
+
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
@@ -27,7 +33,8 @@ export default function AdminPage() {
     optionalServicesPrice: "300",
     about: "",
     password: "",
-    services: [] as Service[]
+    services: [] as Service[],
+    genres: [] as Genre[]
   });
 
   useEffect(() => {
@@ -41,6 +48,11 @@ export default function AdminPage() {
             ...s,
             content: s.content || "",
           }));
+          const genres = data.genres || [
+            { id: 'literatura', title: 'Literatura', items: ['Romances', 'Poesia', 'Contos infantis'] },
+            { id: 'conhecimento', title: 'Conhecimento', items: ['Livros técnicos', '(aprendizagem de línguas, literatura etc)'] },
+            { id: 'espiritualidade', title: 'Espiritualidade', items: ['Espiritualidade cristã'] }
+          ];
           setConfig(prev => ({ 
             ...prev, 
             ...data, 
@@ -111,6 +123,35 @@ export default function AdminPage() {
       newServices.splice(index, 1);
       setConfig({ ...config, services: newServices });
     }
+  };
+
+  const addGenre = () => {
+    const newGenre: Genre = {
+      id: Date.now().toString(),
+      title: "Nova Categoria",
+      items: ["Novo item"],
+    };
+    setConfig({ ...config, genres: [...config.genres, newGenre] });
+  };
+
+  const removeGenre = (index: number) => {
+    if(confirm("Tem certeza que deseja remover esta categoria de gênero?")) {
+      const newGenres = [...config.genres];
+      newGenres.splice(index, 1);
+      setConfig({ ...config, genres: newGenres });
+    }
+  };
+
+  const addGenreItem = (genreIndex: number) => {
+    const newGenres = [...config.genres];
+    newGenres[genreIndex].items.push("Novo item");
+    setConfig({ ...config, genres: newGenres });
+  };
+
+  const removeGenreItem = (genreIndex: number, itemIndex: number) => {
+    const newGenres = [...config.genres];
+    newGenres[genreIndex].items.splice(itemIndex, 1);
+    setConfig({ ...config, genres: newGenres });
   };
 
   const quillModules = useMemo(() => ({
@@ -311,6 +352,92 @@ export default function AdminPage() {
               {config.services.length === 0 && (
                 <div className="text-center text-text-muted py-12 border border-white/5 border-dashed">
                   Nenhum serviço cadastrado. Adicione um para começar.
+                </div>
+              )}
+            </div>
+            </div>
+          </section>
+
+          {/* Gêneros Editoriais */}
+          <section>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-accent font-serif text-xl flex items-center gap-2">
+                <span className="w-6 h-px bg-accent"></span> Gêneros Editoriais
+              </h2>
+              <button 
+                onClick={addGenre}
+                className="border border-accent text-accent px-4 py-2 text-xs uppercase tracking-widest hover:bg-accent hover:text-bg transition-colors"
+              >
+                + Adicionar Categoria
+              </button>
+            </div>
+            
+            <div className="space-y-8">
+              {config.genres.map((genre, index) => (
+                <div key={genre.id} className="bg-surface p-8 border border-white/5 rounded-sm relative group">
+                  <button 
+                    onClick={() => removeGenre(index)}
+                    className="absolute top-8 right-8 text-white/40 hover:text-red-400 text-sm tracking-widest uppercase transition-colors"
+                  >
+                    Remover Categoria
+                  </button>
+                  <div className="mb-6">
+                    <label className="block text-text-secondary text-sm mb-2">Título da Categoria</label>
+                    <input 
+                      type="text" 
+                      className="w-full bg-bg border border-white/20 p-3 text-accent font-serif text-lg outline-none focus:border-accent transition-colors"
+                      value={genre.title}
+                      onChange={(e) => {
+                        const newGenres = [...config.genres];
+                        newGenres[index].title = e.target.value;
+                        setConfig({...config, genres: newGenres});
+                      }}
+                    />
+                  </div>
+                  
+                  <div>
+                    <div className="flex justify-between items-center mb-4">
+                      <label className="block text-text-secondary text-sm">Itens (Gêneros / Tipos de Livros)</label>
+                      <button 
+                        onClick={() => addGenreItem(index)}
+                        className="text-accent text-xs uppercase tracking-widest hover:text-white transition-colors"
+                      >
+                        + Adicionar Item
+                      </button>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      {genre.items.map((item, i) => (
+                        <div key={i} className="flex gap-4 items-center">
+                          <input 
+                            type="text" 
+                            className="flex-1 bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors text-sm"
+                            value={item}
+                            onChange={(e) => {
+                              const newGenres = [...config.genres];
+                              newGenres[index].items[i] = e.target.value;
+                              setConfig({...config, genres: newGenres});
+                            }}
+                          />
+                          <button 
+                            onClick={() => removeGenreItem(index, i)}
+                            className="text-white/40 hover:text-red-400 text-xs tracking-widest uppercase transition-colors w-20 text-center"
+                          >
+                            Excluir
+                          </button>
+                        </div>
+                      ))}
+                      {genre.items.length === 0 && (
+                        <p className="text-text-muted text-sm italic">Nenhum item nesta categoria.</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+              
+              {config.genres.length === 0 && (
+                <div className="text-center text-text-muted py-12 border border-white/5 border-dashed">
+                  Nenhuma categoria cadastrada. Adicione uma para começar.
                 </div>
               )}
             </div>

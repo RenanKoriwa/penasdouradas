@@ -8,9 +8,20 @@ import PenIcon from '@/components/ui/icons/PenIcon';
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface Genre {
+  id: string;
+  title: string;
+  items: string[];
+}
+
 export default function ServicosPage() {
   const [whatsapp, setWhatsapp] = useState('5511999999999');
   const [optionalPrice, setOptionalPrice] = useState('300,00');
+  const [genres, setGenres] = useState<Genre[]>([
+    { id: 'literatura', title: 'Literatura', items: ['Romances', 'Poesia', 'Contos infantis'] },
+    { id: 'conhecimento', title: 'Conhecimento', items: ['Livros técnicos', '(aprendizagem de línguas, literatura etc)'] },
+    { id: 'espiritualidade', title: 'Espiritualidade', items: ['Espiritualidade cristã'] }
+  ]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -21,6 +32,9 @@ export default function ServicosPage() {
         if (d.optionalServicesPrice) {
           const price = String(d.optionalServicesPrice).replace(',', '.');
           setOptionalPrice(Number(price).toLocaleString('pt-BR', { minimumFractionDigits: 2 }));
+        }
+        if (d.genres && Array.isArray(d.genres)) {
+          setGenres(d.genres);
         }
       })
       .catch(() => {});
@@ -167,27 +181,18 @@ export default function ServicosPage() {
             <p className="text-text-secondary mb-12 font-light">Publicamos obras nas seguintes categorias:</p>
             
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center h-full">
-                <h3 className="font-serif text-xl text-accent mb-6">Literatura</h3>
-                <ul className="text-sm text-text-secondary font-light space-y-3 text-center mt-auto">
-                  <li>Romances</li>
-                  <li>Poesia</li>
-                  <li>Contos infantis</li>
-                </ul>
-              </div>
-              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center h-full">
-                <h3 className="font-serif text-xl text-accent mb-6">Conhecimento</h3>
-                <ul className="text-sm text-text-secondary font-light space-y-3 text-center mt-auto">
-                  <li>Livros técnicos</li>
-                  <li className="text-xs opacity-70">(aprendizagem de línguas, literatura etc)</li>
-                </ul>
-              </div>
-              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center h-full">
-                <h3 className="font-serif text-xl text-accent mb-6">Espiritualidade</h3>
-                <ul className="text-sm text-text-secondary font-light space-y-3 text-center mt-auto">
-                  <li>Espiritualidade cristã</li>
-                </ul>
-              </div>
+              {genres.map((genre) => (
+                <div key={genre.id} className="bg-surface border border-white/5 p-8 flex flex-col items-center h-full">
+                  <h3 className="font-serif text-xl text-accent mb-6">{genre.title}</h3>
+                  <ul className="text-sm text-text-secondary font-light space-y-3 text-center mt-6">
+                    {genre.items.map((item, idx) => (
+                      <li key={idx} className={item.startsWith('(') ? 'text-xs opacity-70' : ''}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
 
