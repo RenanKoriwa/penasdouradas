@@ -2,53 +2,42 @@ import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 import DOMPurify from 'isomorphic-dompurify';
-import { Redis } from '@upstash/redis';
-import { unstable_cache, revalidatePath } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 
 const dataFilePath = path.join(process.cwd(), 'src', 'data', 'config.json');
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw6Y_sLt4r8E3DZKjdJV3EN6OL2cAO8jJej8KZRfv3cQuiCndoxhl5prSwLAv9zepmX/exec';
 
-// Get Redis instance if env vars are present
-const getRedis = () => {
-  if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-    return new Redis({
-      url: process.env.KV_REST_API_URL,
-      token: process.env.KV_REST_API_TOKEN,
-    });
+// Fetch from Sheets with a fallback to local config.json
+async function fetchConfig() {
+  let localData = {};
+  try {
+    const fileContent = await fs.readFile(dataFilePath, 'utf-8');
+    localData = JSON.parse(fileContent);
+  } catch (e) {
+    console.error("Local config not found.");
   }
-  return null;
-};
 
-// Cached fetch function (the "buffer")
-const getCachedConfig = unstable_cache(
-  async () => {
-    let data;
-    const redis = getRedis();
-
-    if (redis) {
-      // Tenta ler do Redis
-      data = await redis.get('editora_config');
-      
-      // Se o Redis estiver vazio, puxa do arquivo local e migra pro Redis
-      if (!data) {
-        const fileContent = await fs.readFile(dataFilePath, 'utf-8');
-        data = JSON.parse(fileContent);
-        await redis.set('editora_config', data);
+  try {
+    // We add a timestamp to bypass aggressive GET caching at the fetch level if needed,
+    // but Next.js will cache it based on revalidatePath.
+    const res = await fetch(SHEET_URL, { next: { tags: ['config'], revalidate: 3600 } });
+    if (res.ok) {
+      const sheetData = await res.json();
+      // If the sheet is completely empty or error, fallback to local
+      if (sheetData && !sheetData.error && Object.keys(sheetData).length > 0) {
+        return { ...localData, ...sheetData }; // Merge to ensure we have structure
       }
-    } else {
-      // Fallback local caso não tenha Redis
-      const fileContent = await fs.readFile(dataFilePath, 'utf-8');
-      data = JSON.parse(fileContent);
     }
-    
-    return data;
-  },
-  ['editora-config-cache'],
-  { tags: ['config'] }
-);
+  } catch (e) {
+    console.error("Failed to fetch from Google Sheets:", e);
+  }
+  
+  return localData;
+}
 
 export async function GET() {
   try {
-    const data: any = await getCachedConfig();
+    const data: any = await fetchConfig();
     const { password, ...safeData } = data || {};
     return NextResponse.json(safeData);
   } catch (error) {
@@ -62,20 +51,8 @@ export async function POST(request: Request) {
     const authHeader = request.headers.get('authorization');
     const body = await request.json();
     
-    // Lê os dados atuais ignorando o cache
-    let currentData: any;
-    const redis = getRedis();
-
-    if (redis) {
-      currentData = await redis.get('editora_config');
-      if (!currentData) {
-        const fileContent = await fs.readFile(dataFilePath, 'utf-8');
-        currentData = JSON.parse(fileContent);
-      }
-    } else {
-      const fileContent = await fs.readFile(dataFilePath, 'utf-8');
-      currentData = JSON.parse(fileContent);
-    }
+    // Get current data to validate password
+    const currentData: any = await fetchConfig();
 
     // Validar autenticação
     if (!authHeader || authHeader !== currentData?.password) {
@@ -91,18 +68,28 @@ export async function POST(request: Request) {
       }));
     }
 
-    // Atualiza
+    // Atualiza os dados
     const newData = { ...currentData, ...body };
     if (!body.password) newData.password = currentData.password;
 
-    // Salva
-    if (redis) {
-      await redis.set('editora_config', newData);
-    } else {
+    // Tenta salvar localmente (útil em dev, inútil em produção na Vercel)
+    try {
       await fs.writeFile(dataFilePath, JSON.stringify(newData, null, 2), 'utf-8');
+    } catch(e) {}
+
+    // Salva no Google Sheets (Backend oficial)
+    try {
+      await fetch(SHEET_URL, {
+        method: "POST",
+        body: JSON.stringify(newData),
+        // no-cors mode prevents CORS errors if the Apps Script isn't returning correct headers,
+        // but we want to read the response. The Apps Script we provided handles this if deployed correctly.
+      });
+    } catch (e) {
+      console.error("Failed to post to Google Sheets:", e);
     }
 
-    // Limpa o cache (o Buffer é revalidado aqui!)
+    // Limpa o cache para todos verem as atualizações instantaneamente
     revalidatePath('/', 'layout');
     
     const { password, ...safeData } = newData;
