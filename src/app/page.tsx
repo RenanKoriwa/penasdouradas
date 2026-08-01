@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* ═══ INSTITUTIONAL ABOUT ═══ */}
-      <section className="py-16 md:py-20 bg-surface">
+      <section className="py-16 md:py-20 bg-surface overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-16">
             <div className="w-full md:w-5/12 reveal-up">
@@ -218,7 +218,7 @@ export default function Home() {
       </section>
 
       {/* ═══ LEARN TO WRITE ═══ */}
-      <section className="py-16 md:py-24 bg-surface">
+      <section className="py-16 md:py-24 bg-surface overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-16">
             <div className="w-full md:w-1/2 reveal-up">
@@ -246,7 +246,7 @@ export default function Home() {
       </section>
 
       {/* ═══ FINAL RESULT PREVIEW ═══ */}
-      <section className="py-16 md:py-24 bg-bg relative border-t border-white/5">
+      <section className="py-16 md:py-24 bg-bg relative border-t border-white/5 overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-16">
             <div className="w-full md:w-1/2 reveal-up md:order-2">
