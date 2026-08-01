@@ -198,7 +198,7 @@ export default function Home() {
               <BookIcon className="w-8 h-8" />
             </div>
             <h2 className="font-serif text-2xl md:text-3xl uppercase tracking-wide mb-3">Nossos Serviços</h2>
-            <p className="text-text-secondary text-sm max-w-xl mx-auto font-light">Oferecemos acompanhamento completo para autores que buscam excelência no mercado editorial.</p>
+            <p className="text-text-secondary text-sm max-w-xl mx-auto font-light">Oferecemos soluções editoriais completas para transformar seu manuscrito em uma obra pronta para publicação.</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -251,7 +251,7 @@ export default function Home() {
                 <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide">O Resultado Final</h2>
               </div>
               <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 font-light">
-                Do projeto gráfico impecável ao acabamento físico de alto nível, sua história ganha vida com uma apresentação digna de um best-seller. Nós garantimos que o seu livro seja um objeto de desejo para os leitores.
+                Impressão sob responsabilidade da editora, com excelente padrão de qualidade. Do manuscrito à estante, garantimos que sua obra chegue ao leitor com a apresentação que ela merece.
               </p>
             </div>
             <div className="w-full md:w-1/2 reveal-up md:order-1">
@@ -269,7 +269,7 @@ export default function Home() {
         <div className="container mx-auto px-6 text-center reveal-up relative z-10">
           <h2 className="font-serif text-2xl md:text-3xl mb-3 tracking-wide">Pronto para publicar?</h2>
           <p className="text-text-secondary text-sm mb-6 max-w-md mx-auto font-light">
-            Nossa equipe editorial está pronta para transformar suas ideias em livros de sucesso.
+            Seja qual for o estágio da sua obra, estamos preparados para ajudá-lo a transformá-la em um livro de qualidade.
           </p>
           <a
             href={waLink}

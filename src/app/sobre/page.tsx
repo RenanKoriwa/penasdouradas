@@ -70,7 +70,7 @@ export default function Sobre() {
             A Editora
           </h1>
           <p className="text-text-secondary text-sm md:text-base font-light anim-header max-w-xl mx-auto">
-            Descubra quem somos e por que a literatura é a nossa paixão.
+            Uma via democrática para publicar sua obra.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full gold-line" />
@@ -105,7 +105,7 @@ export default function Sobre() {
                 A Missão
               </h3>
               <p className="text-text-secondary text-sm font-light leading-relaxed">
-                Descobrir talentos literários excepcionais e lapidar seus originais até atingirem a perfeição editorial, entregando ao leitor obras que prendem do início ao fim.
+                Oferecer aos escritores uma forma moderna, transparente e simplificada de publicar seus livros, respeitando sua autonomia criativa e valorizando cada etapa do processo editorial.
               </p>
             </div>
             {/* Visão */}
@@ -115,7 +115,7 @@ export default function Sobre() {
                 A Visão
               </h3>
               <p className="text-text-secondary text-sm font-light leading-relaxed">
-                Tornar-se a principal referência no mercado lusófono na publicação de literatura contemporânea, com um padrão-ouro em design, qualidade gráfica e narrativa.
+                Democratizar o mercado editorial, tornando a publicação de livros acessível a todos os escritores. Mais do que publicar livros, ajudamos autores a concretizar sonhos.
               </p>
             </div>
           </div>
