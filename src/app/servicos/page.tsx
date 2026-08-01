@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicosPage() {
   const [whatsapp, setWhatsapp] = useState('5511999999999');
+  const [optionalPrice, setOptionalPrice] = useState('300,00');
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -17,6 +18,10 @@ export default function ServicosPage() {
       .then((r) => r.json())
       .then((d) => {
         if (d.whatsapp) setWhatsapp(d.whatsapp);
+        if (d.optionalServicesPrice) {
+          const price = String(d.optionalServicesPrice).replace(',', '.');
+          setOptionalPrice(Number(price).toLocaleString('pt-BR', { minimumFractionDigits: 2 }));
+        }
       })
       .catch(() => {});
   }, []);
@@ -94,11 +99,11 @@ export default function ServicosPage() {
           <div className="mb-24 anim-card bg-surface/50 border border-white/5 p-8 relative">
             <h2 className="font-serif text-lg sm:text-xl text-accent mb-4 uppercase tracking-wider sm:tracking-widest">Caso o autor deseje, também realizamos:</h2>
             <ul className="list-none space-y-3 mb-6 text-text-secondary text-sm font-light">
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-accent rotate-45" /> Criação da capa</li>
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-accent rotate-45" /> Diagramação profissional</li>
-              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-accent rotate-45" /> Registros autorais</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-accent rotate-45" /> criação da capa;</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-accent rotate-45" /> diagramação profissional;</li>
+              <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-accent rotate-45" /> registros autorais.</li>
             </ul>
-            <p className="text-sm font-light text-white italic">Cada um desses serviços possui o investimento de <strong className="text-accent not-italic">R$ 300,00</strong>, quando executado pela editora.</p>
+            <p className="text-sm font-light text-white italic">Cada um desses serviços possui o investimento de <strong className="text-accent not-italic">R$ {optionalPrice}</strong>, quando executado pela editora.</p>
           </div>
 
           {/* ═══ MODELO HÍBRIDO ═══ */}
@@ -120,33 +125,33 @@ export default function ServicosPage() {
                 <tbody className="text-sm font-light text-text-secondary">
                   <tr className="border-b border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
                     <td className="py-4 px-5 text-white">Concepção da capa</td>
-                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
-                    <td className="py-4 px-5 text-center text-text-muted italic text-xs">Opcional</td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg font-sans">✓</span></td>
+                    <td className="py-4 px-5 text-center text-text-muted text-xs">Opcional</td>
                   </tr>
                   <tr className="border-b border-white/5 hover:bg-white/[0.05] transition-colors">
                     <td className="py-4 px-5 text-white">Diagramação</td>
-                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
-                    <td className="py-4 px-5 text-center text-text-muted italic text-xs">Opcional</td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg font-sans">✓</span></td>
+                    <td className="py-4 px-5 text-center text-text-muted text-xs">Opcional</td>
                   </tr>
                   <tr className="border-b border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
                     <td className="py-4 px-5 text-white">Registros autorais</td>
-                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
-                    <td className="py-4 px-5 text-center text-text-muted italic text-xs">Opcional</td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg font-sans">✓</span></td>
+                    <td className="py-4 px-5 text-center text-text-muted text-xs">Opcional</td>
                   </tr>
                   <tr className="border-b border-white/5 hover:bg-white/[0.05] transition-colors">
                     <td className="py-4 px-5 text-white">Revisão do texto</td>
                     <td className="py-4 px-5 text-center"></td>
-                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg font-sans">✓</span></td>
                   </tr>
                   <tr className="border-b border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors">
                     <td className="py-4 px-5 text-white">Tradução</td>
                     <td className="py-4 px-5 text-center"></td>
-                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg font-sans">✓</span></td>
                   </tr>
                   <tr className="border-b border-accent/10 hover:bg-white/[0.05] transition-colors">
                     <td className="py-4 px-5 text-white">Impressão</td>
                     <td className="py-4 px-5 text-center"></td>
-                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg">◆</span></td>
+                    <td className="py-4 px-5 text-center"><span className="text-accent text-lg font-sans">✓</span></td>
                   </tr>
                 </tbody>
               </table>

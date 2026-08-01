@@ -24,6 +24,7 @@ export default function AdminPage() {
     location: "",
     email: "",
     instagram: "",
+    optionalServicesPrice: "300",
     about: "",
     password: "",
     services: [] as Service[]
@@ -40,7 +41,12 @@ export default function AdminPage() {
             ...s,
             content: s.content || "",
           }));
-          setConfig({ ...data, services });
+          setConfig(prev => ({ 
+            ...prev, 
+            ...data, 
+            services, 
+            password: "" // Sempre inicializa a senha vazia para o placeholder funcionar no form não-controlado
+          }));
         }
       })
       .catch(err => {
@@ -198,9 +204,19 @@ export default function AdminPage() {
                 <input 
                   type="text" 
                   className="w-full bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors"
-                  value={config.instagram}
+                  value={config.instagram || ""}
                   onChange={(e) => setConfig({...config, instagram: e.target.value})}
                   placeholder="ex: @livrosdourados8"
+                />
+              </div>
+              <div>
+                <label className="block text-text-secondary text-sm mb-2">Preço Serviços Opcionais</label>
+                <input 
+                  type="text" 
+                  className="w-full bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors"
+                  value={config.optionalServicesPrice || ""}
+                  onChange={(e) => setConfig({...config, optionalServicesPrice: e.target.value})}
+                  placeholder="ex: 300"
                 />
               </div>
               <div>
@@ -208,7 +224,7 @@ export default function AdminPage() {
                 <input 
                   type="text" 
                   className="w-full bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors placeholder:text-white/30"
-                  value={config.password}
+                  value={config.password || ""}
                   onChange={(e) => setConfig({...config, password: e.target.value})}
                   placeholder="Deixe em branco para manter a atual"
                 />
