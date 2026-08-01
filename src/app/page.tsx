@@ -203,15 +203,32 @@ export default function Home() {
             <p className="text-text-secondary text-sm max-w-xl mx-auto font-light">Oferecemos soluções editoriais completas para transformar seu manuscrito em uma obra pronta para publicação.</p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10">
             {services.map((s, i) => (
-              <div key={s.id} className="group bg-surface p-6 border-t-2 border-transparent hover:border-accent border-x border-b border-white/5 hover:shadow-[0_4px_20px_-10px_rgba(212,175,55,0.2)] transition-all rounded-sm reveal-up flex flex-col" style={{ transitionDelay: `${i * 100}ms` }}>
-                <h3 className="font-serif text-lg text-accent mb-2 group-hover:text-white transition-colors">{s.title}</h3>
-                <p className="text-text-secondary text-xs leading-relaxed mb-5 font-light flex-grow">
+              <Link 
+                key={s.id} 
+                href="/servicos"
+                className="group relative bg-surface p-8 lg:p-10 border border-white/5 hover:border-accent/30 transition-all duration-500 rounded-sm reveal-up flex flex-col overflow-hidden" 
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                {/* Decorative background number */}
+                <div className="absolute -top-4 -right-4 font-serif text-[120px] leading-none text-white/[0.02] group-hover:text-accent/[0.05] transition-colors duration-500 pointer-events-none select-none">
+                  0{i + 1}
+                </div>
+                
+                <div className="w-8 h-px bg-accent/40 mb-6 group-hover:w-16 group-hover:bg-accent transition-all duration-500" />
+                
+                <h3 className="font-serif text-xl text-white mb-3 group-hover:text-accent transition-colors duration-300 relative z-10">{s.title}</h3>
+                
+                <p className="text-text-secondary text-sm leading-relaxed mb-8 font-light flex-grow relative z-10">
                   {s.description}
                 </p>
-                <Link href={`/servicos/${s.id}`} className="mt-auto text-[10px] uppercase tracking-widest text-accent font-bold group-hover:text-white transition-colors inline-block self-start">Detalhes →</Link>
-              </div>
+                
+                <div className="mt-auto flex items-center gap-2 text-[10px] uppercase tracking-widest text-accent font-bold group-hover:text-white transition-colors relative z-10">
+                  <span>Conhecer</span>
+                  <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
