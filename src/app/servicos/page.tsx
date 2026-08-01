@@ -162,24 +162,24 @@ export default function ServicosPage() {
             <p className="text-text-secondary mb-12 font-light">Publicamos obras nas seguintes categorias:</p>
             
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center justify-center">
-                <h3 className="font-serif text-xl text-accent mb-4">Literatura</h3>
-                <ul className="text-sm text-text-secondary font-light space-y-2 text-center">
+              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center h-full">
+                <h3 className="font-serif text-xl text-accent mb-6">Literatura</h3>
+                <ul className="text-sm text-text-secondary font-light space-y-3 text-center mt-auto">
                   <li>Romances</li>
                   <li>Poesia</li>
                   <li>Contos infantis</li>
                 </ul>
               </div>
-              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center justify-center">
-                <h3 className="font-serif text-xl text-accent mb-4">Conhecimento</h3>
-                <ul className="text-sm text-text-secondary font-light space-y-2 text-center">
+              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center h-full">
+                <h3 className="font-serif text-xl text-accent mb-6">Conhecimento</h3>
+                <ul className="text-sm text-text-secondary font-light space-y-3 text-center mt-auto">
                   <li>Livros técnicos</li>
-                  <li className="text-xs">(aprendizagem de línguas, literatura etc)</li>
+                  <li className="text-xs opacity-70">(aprendizagem de línguas, literatura etc)</li>
                 </ul>
               </div>
-              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center justify-center">
-                <h3 className="font-serif text-xl text-accent mb-4">Espiritualidade</h3>
-                <ul className="text-sm text-text-secondary font-light space-y-2 text-center">
+              <div className="bg-surface border border-white/5 p-8 flex flex-col items-center h-full">
+                <h3 className="font-serif text-xl text-accent mb-6">Espiritualidade</h3>
+                <ul className="text-sm text-text-secondary font-light space-y-3 text-center mt-auto">
                   <li>Espiritualidade cristã</li>
                 </ul>
               </div>
@@ -201,7 +201,7 @@ export default function ServicosPage() {
             href={waLink}
             target="_blank"
             rel="noreferrer"
-            className="relative z-10 inline-block bg-accent text-bg px-8 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-white transition-colors rounded-sm"
+            className="relative z-10 inline-block text-accent border border-accent px-10 py-3 font-serif text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-accent hover:text-bg hover:scale-105 transition-all duration-500"
           >
             Falar com a Equipe
           </a>

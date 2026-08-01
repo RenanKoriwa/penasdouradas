@@ -57,12 +57,17 @@ export default function Footer() {
         {/* Divider */}
         <div className="gold-line mb-5" />
         
-        {/* Bottom row: Slogan + Copyright */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-          <p className="font-serif italic text-text-secondary/50 text-xs">
-            "Com a nossa pena, sua pena torna-se história."
-          </p>
-          <div className="flex items-center gap-4 text-text-muted/40 text-[9px] tracking-widest uppercase">
+        {/* Bottom row: Slogans + Copyright */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2 mt-4">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
+            <p className="font-serif text-text-secondary/90 text-sm tracking-wide">
+              "Uma via democrática para publicar sua obra."
+            </p>
+            <p className="font-serif italic text-text-secondary/50 text-xs">
+              Com a nossa pena, sua pena torna-se história.
+            </p>
+          </div>
+          <div className="flex flex-col items-center md:items-end gap-2 text-text-muted/40 text-[9px] tracking-widest uppercase">
             <span>{location}</span>
             <span>&copy; {new Date().getFullYear()} Penas Douradas</span>
           </div>

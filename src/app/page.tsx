@@ -147,12 +147,12 @@ export default function Home() {
             Na PENAS DOURADAS – Editora, acreditamos que toda grande história merece a oportunidade de alcançar seus leitores.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-accent text-bg px-6 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-white hover:scale-105 hover:shadow-[0_4px_20px_rgba(212,175,55,0.3)] transition-all duration-300"
-            >
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noreferrer"
+                className="text-accent border border-accent px-8 py-3 font-serif text-[10px] md:text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-bg hover:scale-105 transition-all duration-500"
+              >
               Publicar meu Livro
             </a>
             <Link
@@ -325,7 +325,7 @@ export default function Home() {
             href={waLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-block bg-accent text-bg px-8 py-2.5 text-xs uppercase tracking-widest font-bold hover:bg-white hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 rounded-sm"
+            className="inline-block text-accent border border-accent px-8 py-3 font-serif text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-accent hover:text-bg hover:scale-105 transition-all duration-500"
           >
             Falar com a Editora
           </a>
