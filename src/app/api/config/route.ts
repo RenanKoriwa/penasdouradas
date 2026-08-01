@@ -3,12 +3,17 @@ import fs from 'fs/promises';
 import path from 'path';
 import DOMPurify from 'isomorphic-dompurify';
 import { revalidatePath } from 'next/cache';
+import crypto from 'crypto';
 
 const dataFilePath = path.join(process.cwd(), 'src', 'data', 'config.json');
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxGRw_5cy9DXQ1T07brIMVtywRLolIzvyNmtOfPkDRGjdAgkY0bXBZXuTAGYoT00UZ1/exec';
 
+function hashPassword(password: string) {
+  return crypto.createHash('sha256').update(password).digest('hex');
+}
+
 // Fetch from Sheets with a fallback to local config.json
-async function fetchConfig() {
+export async function fetchConfig() {
   let localData = {};
   try {
     const fileContent = await fs.readFile(dataFilePath, 'utf-8');
@@ -18,14 +23,11 @@ async function fetchConfig() {
   }
 
   try {
-    // We add a timestamp to bypass aggressive GET caching at the fetch level if needed,
-    // but Next.js will cache it based on revalidatePath.
     const res = await fetch(SHEET_URL, { next: { tags: ['config'], revalidate: 3600 } });
     if (res.ok) {
       const sheetData = await res.json();
-      // If the sheet is completely empty or error, fallback to local
       if (sheetData && !sheetData.error && Object.keys(sheetData).length > 0) {
-        return { ...localData, ...sheetData }; // Merge to ensure we have structure
+        return { ...localData, ...sheetData };
       }
     }
   } catch (e) {
@@ -51,11 +53,11 @@ export async function POST(request: Request) {
     const authHeader = request.headers.get('authorization');
     const body = await request.json();
     
-    // Get current data to validate password
     const currentData: any = await fetchConfig();
 
-    // Validar autenticação
-    if (!authHeader || authHeader !== currentData?.password) {
+    // Validar autenticação (authHeader vem em plain text do painel admin)
+    // Então verificamos se o hash dele bate com o hash salvo.
+    if (!authHeader || hashPassword(authHeader) !== currentData?.password) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
     }
 
@@ -68,28 +70,28 @@ export async function POST(request: Request) {
       }));
     }
 
-    // Atualiza os dados
     const newData = { ...currentData, ...body };
-    if (!body.password) newData.password = currentData.password;
+    
+    // Se a senha foi atualizada (vem em plain text do body), fazemos o hash antes de salvar
+    if (body.password) {
+      newData.password = hashPassword(body.password);
+    } else {
+      newData.password = currentData.password; // mantemos o hash antigo
+    }
 
-    // Tenta salvar localmente (útil em dev, inútil em produção na Vercel)
     try {
       await fs.writeFile(dataFilePath, JSON.stringify(newData, null, 2), 'utf-8');
     } catch(e) {}
 
-    // Salva no Google Sheets (Backend oficial)
     try {
       await fetch(SHEET_URL, {
         method: "POST",
         body: JSON.stringify(newData),
-        // no-cors mode prevents CORS errors if the Apps Script isn't returning correct headers,
-        // but we want to read the response. The Apps Script we provided handles this if deployed correctly.
       });
     } catch (e) {
       console.error("Failed to post to Google Sheets:", e);
     }
 
-    // Limpa o cache para todos verem as atualizações instantaneamente
     revalidatePath('/', 'layout');
     
     const { password, ...safeData } = newData;

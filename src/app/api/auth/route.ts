@@ -1,18 +1,19 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import crypto from 'crypto';
+import { fetchConfig } from '../config/route';
 
-const dataFilePath = path.join(process.cwd(), 'src', 'data', 'config.json');
+function hashPassword(password: string) {
+  return crypto.createHash('sha256').update(password).digest('hex');
+}
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // Ler os dados atuais para verificar a senha
-    const fileContent = await fs.readFile(dataFilePath, 'utf-8');
-    const data = JSON.parse(fileContent);
+    // Ler os dados atuais do banco de dados (Google Sheets ou local fallback)
+    const data: any = await fetchConfig();
 
-    if (body.password && body.password === data.password) {
+    if (body.password && hashPassword(body.password) === data.password) {
       return NextResponse.json({ success: true });
     } else {
       return NextResponse.json({ success: false, error: 'Senha incorreta' }, { status: 401 });
