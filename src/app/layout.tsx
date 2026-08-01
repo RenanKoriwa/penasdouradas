@@ -34,7 +34,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${inter.variable} ${cinzel.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-bg text-text-primary selection:bg-accent selection:text-bg">
+      <body className="min-h-screen flex flex-col bg-bg text-text-primary selection:bg-accent selection:text-bg overflow-x-hidden">
         <SmoothScrollProvider>
           <Navbar />
           <main className="flex-1 flex flex-col relative z-10">{children}</main>
