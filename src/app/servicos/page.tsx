@@ -67,7 +67,7 @@ export default function ServicosPage() {
         <div className="max-w-4xl mx-auto">
           
           <div className="mb-16 anim-card">
-            <h2 className="font-serif text-2xl text-accent mb-6 uppercase tracking-widest">Para as obras selecionadas, disponibilizamos:</h2>
+            <h2 className="font-serif text-xl sm:text-2xl text-accent mb-6 uppercase tracking-wider sm:tracking-widest">Para as obras selecionadas, disponibilizamos:</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-surface p-6 border border-white/5 relative overflow-hidden group hover:border-accent/30 transition-all">
                 <div className="absolute top-0 left-0 w-1 h-full bg-accent/20 group-hover:bg-accent transition-colors" />
@@ -92,7 +92,7 @@ export default function ServicosPage() {
           </div>
 
           <div className="mb-24 anim-card bg-surface/50 border border-white/5 p-8 relative">
-            <h2 className="font-serif text-xl text-accent mb-4 uppercase tracking-widest">Caso o autor deseje, também realizamos:</h2>
+            <h2 className="font-serif text-lg sm:text-xl text-accent mb-4 uppercase tracking-wider sm:tracking-widest">Caso o autor deseje, também realizamos:</h2>
             <ul className="list-none space-y-3 mb-6 text-text-secondary text-sm font-light">
               <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-accent rotate-45" /> Criação da capa</li>
               <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-accent rotate-45" /> Diagramação profissional</li>
@@ -103,7 +103,7 @@ export default function ServicosPage() {
 
           {/* ═══ MODELO HÍBRIDO ═══ */}
           <div className="mb-24 anim-card">
-            <h2 className="font-serif text-3xl text-white mb-6 uppercase tracking-widest text-center border-b border-accent/20 pb-6">Nosso Modelo de Publicação</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl text-white mb-6 uppercase tracking-wider sm:tracking-widest text-center border-b border-accent/20 pb-6">Nosso Modelo de Publicação</h2>
             <p className="text-text-secondary text-center max-w-2xl mx-auto mb-12 font-light">
               A PENAS DOURADAS – Editora adota um conceito moderno de publicação híbrida. Nesse modelo, o autor pode participar diretamente da produção do livro, reduzindo custos e mantendo maior controle sobre sua obra.
             </p>
@@ -158,7 +158,7 @@ export default function ServicosPage() {
 
           {/* ═══ GÊNEROS EDITORIAIS ═══ */}
           <div className="anim-card text-center mb-16">
-            <h2 className="font-serif text-3xl text-white mb-10 uppercase tracking-widest border-b border-accent/20 pb-6">Gêneros Editoriais</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl text-white mb-10 uppercase tracking-wider sm:tracking-widest border-b border-accent/20 pb-6">Gêneros Editoriais</h2>
             <p className="text-text-secondary mb-12 font-light">Publicamos obras nas seguintes categorias:</p>
             
             <div className="grid md:grid-cols-3 gap-6">

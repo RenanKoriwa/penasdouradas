@@ -64,18 +64,18 @@ export default function Home() {
   const getBookStyle = (index: number) => {
     if (index === activeBook) {
       return {
-        wrapper: "w-56 md:w-64 shadow-[0_20px_50px_-10px_rgba(0,0,0,1)] rotate-0 translate-x-0 translate-y-0 border-accent/30 z-30 opacity-100",
+        wrapper: "w-44 sm:w-56 md:w-64 shadow-[0_20px_50px_-10px_rgba(0,0,0,1)] rotate-0 translate-x-0 translate-y-0 border-accent/30 z-30 opacity-100",
         img: "grayscale-0"
       };
     }
     if (index === (activeBook + 1) % 3) {
       return {
-        wrapper: "w-48 md:w-56 shadow-2xl rotate-12 translate-x-20 md:translate-x-24 -translate-y-8 border-white/5 opacity-80 z-20",
+        wrapper: "w-36 sm:w-48 md:w-56 shadow-2xl rotate-12 translate-x-14 sm:translate-x-20 md:translate-x-24 -translate-y-8 border-white/5 opacity-80 z-20",
         img: "grayscale"
       };
     }
     return {
-      wrapper: "w-48 md:w-56 shadow-2xl -rotate-6 -translate-x-16 md:-translate-x-20 translate-y-6 border-white/5 opacity-60 z-10",
+      wrapper: "w-36 sm:w-48 md:w-56 shadow-2xl -rotate-6 -translate-x-12 sm:-translate-x-16 md:-translate-x-20 translate-y-6 border-white/5 opacity-60 z-10",
       img: "grayscale"
     };
   };
@@ -113,7 +113,7 @@ export default function Home() {
           <div className="flex justify-center mb-3 text-accent hero-anim">
             <PenIcon className="w-9 h-9" />
           </div>
-          <h1 className="hero-anim font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.15] mb-4 uppercase tracking-[0.15em] gold-foil">
+          <h1 className="hero-anim font-serif text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-[1.15] mb-4 uppercase tracking-[0.05em] sm:tracking-[0.1em] md:tracking-[0.15em] gold-foil">
             Uma via democrática para publicar sua <br/><span className="text-white italic font-light lowercase">obra</span>
           </h1>
           <p className="text-text-secondary text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed reveal-up mt-5 mb-8">
@@ -144,7 +144,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-16">
             <div className="w-full md:w-5/12 reveal-up">
               {/* Elegant Book Composition */}
-              <div className="relative h-[450px] md:h-[500px] w-full flex items-center justify-center">
+              <div className="relative h-[350px] sm:h-[450px] md:h-[500px] w-full flex items-center justify-center">
                 {books.map((book, i) => {
                   const style = getBookStyle(i);
                   return (
@@ -224,7 +224,7 @@ export default function Home() {
             <div className="w-full md:w-1/2 reveal-up">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-px bg-accent" />
-                <h2 className="font-serif text-2xl md:text-3xl text-accent uppercase tracking-wide leading-tight">Produção Literária<br/> e Empreendedorismo</h2>
+                <h2 className="font-serif text-xl sm:text-2xl md:text-3xl text-accent uppercase tracking-wide leading-tight">Produção Literária<br/> e Empreendedorismo</h2>
               </div>
               <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-6 font-light">
                 <strong>Da Concepção À Publicação.</strong> O guia definitivo de Alberto Kuzoma para escritores em formação, estreantes e experientes. Descubra os segredos para transformar suas ideias em obras-primas e dominar as estratégias do mercado editorial contemporâneo.

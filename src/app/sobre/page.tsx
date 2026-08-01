@@ -66,7 +66,7 @@ export default function Sobre() {
           <div className="flex justify-center mb-4 text-accent anim-header">
             <PenIcon className="w-8 h-8" />
           </div>
-          <h1 className="font-serif text-3xl md:text-4xl uppercase tracking-widest mb-4 anim-header gold-foil">
+          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl uppercase tracking-wider sm:tracking-widest mb-4 anim-header gold-foil">
             A Editora
           </h1>
           <p className="text-text-secondary text-sm md:text-base font-light anim-header max-w-xl mx-auto">
