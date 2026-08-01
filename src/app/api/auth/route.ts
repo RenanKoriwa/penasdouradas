@@ -1,10 +1,5 @@
 import { NextResponse } from 'next/server';
-import crypto from 'crypto';
-import { fetchConfig } from '../config/route';
-
-function hashPassword(password: string) {
-  return crypto.createHash('sha256').update(password).digest('hex');
-}
+import { fetchConfig, hashPassword } from '@/lib/config';
 
 export async function POST(request: Request) {
   try {
