@@ -5,7 +5,7 @@ import DOMPurify from 'isomorphic-dompurify';
 import { revalidatePath } from 'next/cache';
 
 const dataFilePath = path.join(process.cwd(), 'src', 'data', 'config.json');
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw6Y_sLt4r8E3DZKjdJV3EN6OL2cAO8jJej8KZRfv3cQuiCndoxhl5prSwLAv9zepmX/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxGRw_5cy9DXQ1T07brIMVtywRLolIzvyNmtOfPkDRGjdAgkY0bXBZXuTAGYoT00UZ1/exec';
 
 // Fetch from Sheets with a fallback to local config.json
 async function fetchConfig() {

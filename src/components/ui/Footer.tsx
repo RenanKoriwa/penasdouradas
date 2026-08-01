@@ -7,6 +7,8 @@ import Image from 'next/image';
 export default function Footer() {
   const [whatsapp, setWhatsapp] = useState('5511999999999');
   const [location, setLocation] = useState('São Paulo, SP');
+  const [email, setEmail] = useState('livrosdourados230@gmail.com');
+  const [instagram, setInstagram] = useState('livrosdourados8');
 
   useEffect(() => {
     fetch('/api/config')
@@ -14,6 +16,8 @@ export default function Footer() {
       .then((d) => {
         if (d.whatsapp) setWhatsapp(d.whatsapp.replace(/\D/g, ''));
         if (d.location) setLocation(d.location);
+        if (d.email) setEmail(d.email);
+        if (d.instagram) setInstagram(d.instagram.replace('@', ''));
       })
       .catch(() => {});
   }, []);
@@ -49,8 +53,8 @@ export default function Footer() {
 
           {/* Contact links */}
           <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-[10px] tracking-widest text-text-muted font-light">
-            <a href="mailto:livrosdourados230@gmail.com" className="hover:text-accent transition-colors">livrosdourados230@gmail.com</a>
-            <a href="https://instagram.com/livrosdourados8" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">@livrosdourados8</a>
+            <a href={`mailto:${email}`} className="hover:text-accent transition-colors">{email}</a>
+            <a href={`https://instagram.com/${instagram}`} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">@{instagram}</a>
           </div>
         </div>
 

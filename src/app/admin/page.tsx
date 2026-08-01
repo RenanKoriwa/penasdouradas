@@ -22,6 +22,8 @@ export default function AdminPage() {
   const [config, setConfig] = useState({
     whatsapp: "",
     location: "",
+    email: "",
+    instagram: "",
     about: "",
     password: "",
     services: [] as Service[]
@@ -179,6 +181,26 @@ export default function AdminPage() {
                   className="w-full bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors"
                   value={config.location}
                   onChange={(e) => setConfig({...config, location: e.target.value})}
+                />
+              </div>
+              <div>
+                <label className="block text-text-secondary text-sm mb-2">E-mail de Contato</label>
+                <input 
+                  type="email" 
+                  className="w-full bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors"
+                  value={config.email}
+                  onChange={(e) => setConfig({...config, email: e.target.value})}
+                  placeholder="ex: contato@penasdouradas.com"
+                />
+              </div>
+              <div>
+                <label className="block text-text-secondary text-sm mb-2">Instagram</label>
+                <input 
+                  type="text" 
+                  className="w-full bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors"
+                  value={config.instagram}
+                  onChange={(e) => setConfig({...config, instagram: e.target.value})}
+                  placeholder="ex: @livrosdourados8"
                 />
               </div>
               <div>
