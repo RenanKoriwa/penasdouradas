@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const [whatsapp, setWhatsapp] = useState('5511999999999');
-  const [services, setServices] = useState<any[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -21,7 +20,6 @@ export default function Home() {
       .then((r) => r.json())
       .then((d) => { 
         if (d.whatsapp) setWhatsapp(d.whatsapp); 
-        if (d.services) setServices(d.services.slice(0, 3));
       })
       .catch(() => {});
   }, []);
@@ -79,6 +77,29 @@ export default function Home() {
       img: "grayscale"
     };
   };
+
+  const hardcodedServices = [
+    {
+      id: "revisao",
+      title: "Revisão de texto",
+      description: "Correção ortográfica, gramatical e estilística realizada por profissionais qualificados de forma totalmente gratuita."
+    },
+    {
+      id: "traducao",
+      title: "Tradução grátis",
+      description: "Serviços de tradução sem custo para ampliar o alcance nacional e internacional de sua obra."
+    },
+    {
+      id: "impressao",
+      title: "Impressão",
+      description: "Impressão sob responsabilidade da editora. Produção gráfica com excelente padrão de qualidade."
+    },
+    {
+      id: "apoio",
+      title: "Apoio editorial",
+      description: "Acompanhamento garantido. Uma relação de confiança, respeito e transparência durante todo o processo."
+    }
+  ];
 
   const waLink = `https://wa.me/${whatsapp.replace(/\D/g, '')}`;
   const waLinkBook = `https://wa.me/${whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre o livro Produção Literária e Empreendedorismo.')}`;
@@ -203,8 +224,8 @@ export default function Home() {
             <p className="text-text-secondary text-sm max-w-xl mx-auto font-light">Oferecemos soluções editoriais completas para transformar seu manuscrito em uma obra pronta para publicação.</p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10">
-            {services.map((s, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
+            {hardcodedServices.map((s, i) => (
               <Link 
                 key={s.id} 
                 href="/servicos"
