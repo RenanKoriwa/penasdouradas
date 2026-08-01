@@ -11,8 +11,6 @@ interface Service {
   id: string;
   title: string;
   description: string;
-  features: string[];
-  content: string;
 }
 
 export default function AdminPage() {
@@ -95,8 +93,6 @@ export default function AdminPage() {
       id: Date.now().toString(),
       title: "Novo Serviço",
       description: "",
-      features: ["", "", ""],
-      content: ""
     };
     setConfig({ ...config, services: [...config.services, newService] });
   };
@@ -260,7 +256,7 @@ export default function AdminPage() {
                     <div>
                       <label className="block text-text-secondary text-sm mb-2">Descrição Curta (Resumo no Card)</label>
                       <textarea 
-                        className="w-full bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors h-20 resize-none"
+                        className="w-full bg-bg border border-white/20 p-3 text-white outline-none focus:border-accent transition-colors h-24 resize-none"
                         value={service.description}
                         onChange={(e) => {
                           const newServices = [...config.services];
@@ -268,42 +264,6 @@ export default function AdminPage() {
                           setConfig({...config, services: newServices});
                         }}
                       />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-text-secondary text-sm mb-2">Tópicos (Três principais benefícios)</label>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {service.features.map((feature, fIndex) => (
-                          <input 
-                            key={fIndex}
-                            type="text" 
-                            className="w-full bg-bg border border-white/20 p-2 text-white outline-none focus:border-accent text-sm transition-colors"
-                            value={feature}
-                            onChange={(e) => {
-                              const newServices = [...config.services];
-                              newServices[index].features[fIndex] = e.target.value;
-                              setConfig({...config, services: newServices});
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-text-secondary text-sm mb-2">Texto Completo da Página Interna</label>
-                      <div className="bg-bg border border-white/20 text-white quill-dark-theme rounded-sm overflow-hidden">
-                        <ReactQuill 
-                          theme="snow"
-                          modules={quillModules}
-                          value={service.content}
-                          onChange={(content) => {
-                            const newServices = [...config.services];
-                            newServices[index].content = content;
-                            setConfig({...config, services: newServices});
-                          }}
-                          className="min-h-[250px]"
-                        />
-                      </div>
                     </div>
                     
                   </div>

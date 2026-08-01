@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const [whatsapp, setWhatsapp] = useState('5511999999999');
+  const [services, setServices] = useState<any[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,8 +21,13 @@ export default function Home() {
       .then((r) => r.json())
       .then((d) => { 
         if (d.whatsapp) setWhatsapp(d.whatsapp); 
+        if (d.services && d.services.length > 0) {
+          setServices(d.services);
+        } else {
+          setServices(hardcodedServices);
+        }
       })
-      .catch(() => {});
+      .catch(() => setServices(hardcodedServices));
   }, []);
 
   useEffect(() => {
@@ -225,7 +231,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10">
-            {hardcodedServices.map((s, i) => (
+            {(services.length > 0 ? services : hardcodedServices).map((s, i) => (
               <Link 
                 key={s.id} 
                 href="/servicos"
