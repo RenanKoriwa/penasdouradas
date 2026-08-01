@@ -1,6 +1,5 @@
 import fs from 'fs/promises';
 import path from 'path';
-import crypto from 'crypto';
 
 const dataFilePath = path.join(process.cwd(), 'src', 'data', 'config.json');
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxGRw_5cy9DXQ1T07brIMVtywRLolIzvyNmtOfPkDRGjdAgkY0bXBZXuTAGYoT00UZ1/exec?v=3';

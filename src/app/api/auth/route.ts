@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+export const dynamic = 'force-dynamic';
 import { fetchConfig } from '@/lib/config';
 
 export async function POST(request: Request) {
