@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   description: "Publicando o melhor da literatura contemporânea.",
   icons: {
     icon: '/icon.png',
-    shortcut: '/favicon.ico',
     apple: '/icon.png',
   },
 };
