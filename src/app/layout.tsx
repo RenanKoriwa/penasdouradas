@@ -22,6 +22,11 @@ const cinzel = Cinzel({
 export const metadata: Metadata = {
   title: "Editora Penas Douradas",
   description: "Publicando o melhor da literatura contemporânea.",
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({
